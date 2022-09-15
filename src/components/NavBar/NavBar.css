@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+.NavBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(197, 197, 197);
+}
+
+.anchorNav{
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+
+.elementNav{
+    padding-right: 3vh;
+    padding-left: 3vh;
+}
+
+.brandNav{
+    font-size: 40px;
+    background-color: rgb(44, 44, 44);
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(69, 226, 179);
+    border-radius: 30px;
+}
