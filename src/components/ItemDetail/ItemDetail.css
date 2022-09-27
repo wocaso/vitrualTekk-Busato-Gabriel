@@ -1,0 +1,50 @@
+
+
+#itemDetailPicture{
+    grid-area: itemDetailPicture;
+}
+#itemDetailTittle{
+    display: flex;
+    justify-self: center;
+    font-size: 50px;
+    grid-area: itemDetailTittle;
+}
+#itemDetailDescription{
+    grid-area: itemDetailDescription;
+    font-weight: lighter;
+}
+#itemDetailPrice{
+    grid-area: itemDetailPrice;
+}
+#itemDetailBtnComprar{
+    grid-area: itemDetailBtnComprar;
+    display: flex;
+    justify-self: center;
+}
+
+
+#itemDetailGrid{
+    display: grid;
+    grid-template-columns: 20vw 15vw;
+    grid-template-rows: auto auto auto 50px auto;
+    grid-template-areas: 
+    "itemDetailTittle itemDetailTittle"
+    "itemDetailPicture itemDetailDescription"
+    "itemDetailPicture itemDetailPrice"
+    ". ."
+    "itemDetailBtnComprar itemDetailBtnComprar";
+    justify-items: center;
+    align-items: center;
+    border: 5px solid rgb(238, 238, 238);
+    border-radius: 12px;
+    margin-top: 30px
+
+}
+
+#itemDetailFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+

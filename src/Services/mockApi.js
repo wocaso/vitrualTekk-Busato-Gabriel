@@ -48,4 +48,12 @@ export default function getData(){
         },2000)
     })
 }
+
+export function getSingleData(){
+    return new Promise((res,reject)=>{
+        setTimeout(()=>{
+            res(data[0]);
+        },2000)
+    })
+}
  

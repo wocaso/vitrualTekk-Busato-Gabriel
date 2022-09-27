@@ -1,15 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import "./ItemListContainer.css";
 import ItemList from '../ItemList/ItemList';
+import getData from "../../Services/mockApi"
 
 
 
-function ItemListContainer(props) {
-    const {greeting} = props;
+function ItemListContainer() {
+      let [data, setData] = useState([]);
+    
+    useEffect(()=>{
+        getData().then((respuesta) =>{ 
+            setData(respuesta);
+        })
+    },[])
   return (
     <div>
-        <h1 className="texto">{greeting}</h1>
-        <ItemList/>
+        <ItemList items={data}/>
 
     </div>
   )
