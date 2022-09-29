@@ -39,6 +39,15 @@ const data = [
         picture:"/Assets/Items/Joystick.png"
 
     }
+    ,
+    {
+        id: 6,
+        tittle: "RedDead Redemption",
+        description: "Juego",
+        price: 50,
+        picture:"/Assets/Items/Game1.JPG"
+
+    }
 ]
 
 export default function getData(){
@@ -49,10 +58,30 @@ export default function getData(){
     })
 }
 
-export function getSingleData(){
+export function getSingleData(idItem){
     return new Promise((res,reject)=>{
         setTimeout(()=>{
-            res(data[0]);
+            let itemFind = data.find((item) =>{
+                return item.id === idItem;
+
+            })
+            if(itemFind) res(itemFind);
+            else reject(new Error("No se encontro el item."))  
+
+        },2000)
+    })
+}
+
+export function getCatData(CatItem){
+    return new Promise((res,reject)=>{
+        setTimeout(()=>{
+            let itemFind = data.filter((item) =>{
+                return item.description === CatItem;
+
+            })
+            if(itemFind) res(itemFind);
+            else reject(new Error("No se encontro la categoria."))  
+
         },2000)
     })
 }

@@ -1,8 +1,8 @@
 import './App.css';
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 
 
 
@@ -10,14 +10,22 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <NavBar/>
-    {/* <ItemListContainer greeting="Creando mundos..."/>
-    <ItemCount initial={1}stock={5}/> */}
-    <ItemDetailContainer/>
-
-
-
-      
+      <Routes>
+        <Route path='/' element={
+            <ItemListContainer/>
+        }/>
+                <Route path='/Item/:id' element={
+            <ItemDetailContainer/>
+        }/>
+        <Route path="/Cat/:cat" element={
+            <ItemListContainer/>
+        }/>
+        
+      </Routes>
+        
+      </BrowserRouter>
     </div>
   );
 }

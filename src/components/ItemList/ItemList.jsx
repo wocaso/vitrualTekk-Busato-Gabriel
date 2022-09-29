@@ -10,7 +10,7 @@ function ItemList(props) {
     <div id='ItemListFlex'>
         {props.items.map((item)=>{
             return(
-                <Item key={item.id} tittle={item.tittle} description={item.description} price={item.price} picture={item.picture}/>
+                <Item id={item.id} key={item.id} tittle={item.tittle} description={item.description} price={item.price} picture={item.picture}/>
 
             );
         })}
