@@ -1,4 +1,4 @@
-
+@import "../ItemCount/ItemCount.css";
 
 #itemDetailPicture{
     grid-area: itemDetailPicture;
@@ -21,23 +21,32 @@
     display: flex;
     justify-self: center;
 }
+#ItemCountContainer{
+    grid-area: ItemCount;
+}
+
+
+
+
 
 
 #itemDetailGrid{
     display: grid;
-    grid-template-columns: 20vw 15vw;
-    grid-template-rows: auto auto auto 50px auto;
+    grid-template-columns:60px auto auto 60px;
+    grid-template-rows: auto auto auto 50px auto auto;
     grid-template-areas: 
-    "itemDetailTittle itemDetailTittle"
-    "itemDetailPicture itemDetailDescription"
-    "itemDetailPicture itemDetailPrice"
-    ". ."
-    "itemDetailBtnComprar itemDetailBtnComprar";
+    ". itemDetailTittle itemDetailTittle ."
+    ". itemDetailPicture itemDetailDescription ."
+    ". itemDetailPicture itemDetailPrice ."
+    ". . . ."
+    ". itemDetailBtnComprar itemDetailBtnComprar ."
+    "ItemCount ItemCount ItemCount ItemCount";
     justify-items: center;
     align-items: center;
     border: 5px solid rgb(238, 238, 238);
     border-radius: 12px;
-    margin-top: 30px
+    margin-top: 30px;
+    margin-left: 1vw;
 
 }
 

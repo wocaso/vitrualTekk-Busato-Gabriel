@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .NavBar{
     display: flex;
     justify-content: center;
@@ -8,15 +9,15 @@
 
 .anchorNav{
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: rgb(41, 41, 41);
 }
 
 
 .elementNav{
-    padding-right: 3vh;
-    padding-left: 3vh;
+    padding-right: 3vw;
+    padding-left: 3vw;
 }
 
 .brandNav{

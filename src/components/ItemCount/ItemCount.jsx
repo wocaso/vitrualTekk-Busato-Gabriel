@@ -17,21 +17,15 @@ function ItemCount(props) {
         }            
     }
 
-    function onAdd(){
-        //Agrego la consiga que plantea el ejercicio, pero carece de utilidad por el momento.
-        if(count<=props.stock){
-                alert(count)     
-        }      
-    }
   return (
     <div>
-    <div className='container'>
+    <div id='containerItemCount'>
      <div className='containerCount'>
             <button onClick={addCount}>+</button>
             <span>{count}</span>
             <button onClick={reducceCount}>-</button>
       </div>
-      <button id="btnAgregar" onClick={onAdd}>Agregar al carrito</button>
+      <button id="btnAgregar" onClick={()=> props.onAdd(count)}>Agregar al carrito</button>
     </div>
       
     </div>

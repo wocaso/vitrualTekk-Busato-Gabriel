@@ -4,7 +4,9 @@ const data = [
         tittle: "Play Station 5",
         description: "Consola",
         price: 4000,
-        picture:"/Assets/Items/Ps5.png"
+        picture:"/Assets/Items/Ps5.png",
+        stock: 6
+
 
     },
     {
@@ -12,7 +14,8 @@ const data = [
         tittle: "Xbox series",
         description: "Consola",
         price: 4500,
-        picture:"/Assets/Items/Xbox.png"
+        picture:"/Assets/Items/Xbox.png",
+        stock: 4
 
     },
     {
@@ -20,7 +23,8 @@ const data = [
         tittle: "Nintendo Switch",
         description: "Consola",
         price: 800,
-        picture:"/Assets/Items/NintendoSwitch.png"
+        picture:"/Assets/Items/NintendoSwitch.png",
+        stock: 10
 
     },
     {
@@ -28,7 +32,8 @@ const data = [
         tittle: "Mouse",
         description: "Periferico",
         price: 4000,
-        picture:"/Assets/Items/Mouse.png"
+        picture:"/Assets/Items/Mouse.png",
+        stock: 8
 
     },
     {
@@ -36,7 +41,8 @@ const data = [
         tittle: "Joystick",
         description: "Periferico",
         price: 200,
-        picture:"/Assets/Items/Joystick.png"
+        picture:"/Assets/Items/Joystick.png",
+        stock: 10
 
     }
     ,
@@ -45,7 +51,8 @@ const data = [
         tittle: "RedDead Redemption",
         description: "Juego",
         price: 50,
-        picture:"/Assets/Items/Game1.JPG"
+        picture:"/Assets/Items/Game1.JPG",
+        stock: 7
 
     }
 ]
@@ -68,7 +75,7 @@ export function getSingleData(idItem){
             if(itemFind) res(itemFind);
             else reject(new Error("No se encontro el item."))  
 
-        },2000)
+        },1000)
     })
 }
 
@@ -82,7 +89,7 @@ export function getCatData(CatItem){
             if(itemFind) res(itemFind);
             else reject(new Error("No se encontro la categoria."))  
 
-        },2000)
+        },1000)
     })
 }
  

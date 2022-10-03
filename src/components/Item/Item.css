@@ -32,3 +32,7 @@
 .itemTexto{
     font-family: 'Open Sans', sans-serif;
 }
+
+#itemPicture{
+    margin-top: 10px;
+}
