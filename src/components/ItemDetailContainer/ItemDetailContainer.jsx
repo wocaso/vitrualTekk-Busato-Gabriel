@@ -12,7 +12,7 @@ function ItemDetailContainer() {
     },[id])
 
   return (
-    <ItemDetail id={data.id} tittle ={data.tittle} picture={data.picture} description={data.description} price={data.price} stock={data.stock}/>
+    <ItemDetail item={data}/>
   )
 }
 
