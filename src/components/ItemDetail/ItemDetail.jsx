@@ -2,15 +2,16 @@ import React from 'react'
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
 import { useState, useContext } from "react"
-import ButtonCounter from './ButtonCounter/ButtonCounter';
 import {cartContext} from "../../context/cartContext"
+import ButtonCounter from './ButtonCounter/ButtonCounter';
+
 
 
 
 
 function ItemDetail({item}) {
   let [onAddConfirm, setOnAddConfirm] = useState(0);
-  const {  addItem, getTotalItemInCart} = useContext(cartContext);
+  const {  addItem } = useContext(cartContext);
 
   function addedToCart(count){
       setOnAddConfirm(count)

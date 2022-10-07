@@ -40,7 +40,6 @@ export default function CartContextProvider({children}){
     }
 
 
-//aun no posee utlidad.
     function removeItem(itemId){
         for (let i = 0; i<= cart.length; i++) {
             if(cart[i].id===itemId){      
@@ -53,8 +52,7 @@ export default function CartContextProvider({children}){
     }
 
     function clearCart(){
-        let newCart = []
-        setCart(newCart);
+        setCart([]);
     }
 
     return (
