@@ -1,0 +1,7 @@
+#CartPriceContainer{
+    border: 5px solid rgb(238, 238, 238);
+    border-radius: 12px;
+    width: 300px;
+    height: auto;
+    margin: 20px;
+}

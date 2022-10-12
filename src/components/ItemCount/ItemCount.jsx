@@ -2,8 +2,10 @@ import React from 'react'
 import "./ItemCount.css";
 
 
+
 function ItemCount(props) {
     const [count, setCount] = React.useState(props.initial)
+
 
     function addCount(){
         if(count<props.stock){

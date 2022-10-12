@@ -20,6 +20,7 @@ function ItemDetail({item}) {
 
 
 
+
   return (
     <div id="itemDetailFlex">
       <div id='itemDetailGrid'>
@@ -28,7 +29,9 @@ function ItemDetail({item}) {
       <h1 className='itemTexto' id='itemDetailDescription'>{item.description}</h1>
       <h1 className='itemTexto' id='itemDetailPrice'>${item.price}</h1>
       <div id='ItemCountContainer'>
-        {onAddConfirm === 0 ? <ItemCount initial={1} stock={item.stock} onAdd={addedToCart}/> : <ButtonCounter link="/Cart"/>}
+
+        
+        {onAddConfirm === 0 ? <ItemCount initial={1} stock={item.stock} id={item.id} onAdd={addedToCart}/> : <ButtonCounter link="/Cart"/>}
 
 
         </div>      

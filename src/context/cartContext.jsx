@@ -38,25 +38,59 @@ export default function CartContextProvider({children}){
         })
         return total;
     }
+    function plusOneItem(itemId){
+        for (let i = 0; i<= cart.length; i++) {
+            if(cart[i]){
+                if(cart[i].id===itemId){      
+                    let newCart = cart.map((item) => item);     
+                    newCart[i].count += 1;
+                    setCart(newCart);
+                }
+
+            }      
+        }
+    
+
+    }
+
+    function minusOneItem(itemId){
+        for (let i = 0; i<= cart.length; i++) {
+            if(cart[i]){
+                if(cart[i].id===itemId){      
+                    let newCart = cart.map((item) => item);     
+                    newCart[i].count -= 1;
+                    setCart(newCart);
+                }
+
+            }      
+        }
+    
+
+    }
 
 
     function removeItem(itemId){
         for (let i = 0; i<= cart.length; i++) {
-            if(cart[i].id===itemId){      
-                let newCart = cart.map((item) => item);     
-                newCart.splice(i, 1);
-                setCart(newCart);
+            if(cart[i]){
+                if(cart[i].id===itemId){      
+                    let newCart = cart.map((item) => item);     
+                    newCart.splice(i, 1);
+                    setCart(newCart);
+                }
+
             }
+            
             
         }
     }
+
 
     function clearCart(){
         setCart([]);
     }
 
     return (
-        <cartContext.Provider value={{cart, addItem, removeItem, isInCart, clearCart, getTotalItemInCart}}>{children}</cartContext.Provider> 
+        <cartContext.Provider value={{cart, addItem, removeItem, isInCart, clearCart, getTotalItemInCart, plusOneItem, minusOneItem}}>{children}</cartContext.Provider> 
     );
 }
 

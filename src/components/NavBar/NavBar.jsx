@@ -1,11 +1,14 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import "./NavBar.css";
 import CartWidget from '../CartWidget/CartWidget';
 import {Link} from "react-router-dom";
+import {cartContext} from "../../context/cartContext"
 
 
 
 function NavBar(){
+    const context = useContext(cartContext);
+    const {getTotalItemInCart} = context;
     return(
         <nav className="NavBar">
             <Link to="/" style={{ textDecoration: 'none' }}>
@@ -16,7 +19,7 @@ function NavBar(){
             <Link className="elementNav anchorNav" to="/Cat/Consola">Consolas</Link>
             <Link className="elementNav anchorNav" to="/Cat/Periferico">Perifericos</Link>
             <Link className="elementNav anchorNav" to="/Cat/Juego">Juegos</Link>
-            <CartWidget/>
+            {getTotalItemInCart() > 0 && <CartWidget/>}
         </nav>
 
     );

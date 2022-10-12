@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+#CartWidgetContainer{
+    display: flex;
+    flex-direction: row;
+    transition: 00.5s;
+}
+
+#CartWidgetCount{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 35px;
+    
+}
+
+#CartWidgetContainer:hover{
+    transform: scale(1.06);
+}
