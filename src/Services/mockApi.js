@@ -31,7 +31,7 @@ const data = [
         id: 4,
         tittle: "Mouse",
         description: "Periferico",
-        price: 4000,
+        price: 400,
         picture:"/Assets/Items/Mouse.png",
         stock: 8
 

@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import "./ItemListContainer.css";
 import ItemList from '../ItemList/ItemList';
-import getData from "../../Services/mockApi";
-import {getCatData} from "../../Services/mockApi";
+import {getData, getCatData} from "../../Services/firestore";
 import {useParams} from "react-router-dom";
 
 

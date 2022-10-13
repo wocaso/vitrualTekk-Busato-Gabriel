@@ -11,15 +11,21 @@ function NavBar(){
     const {getTotalItemInCart} = context;
     return(
         <nav className="NavBar">
-            <Link to="/" style={{ textDecoration: 'none' }}>
-            <h1 className="elementNav brandNav">V.T</h1>
+            <div id='BrandAndCartContainer'>
+            {getTotalItemInCart() > 0 && <CartWidget/>}
+            <Link to="/" style={{ textDecoration: 'none' }}> 
+                <h1 className="elementNav brandNav">V.T</h1>
             </Link>
+                    
+            </div>
+            
+            
             
             <Link  className="elementNav anchorNav" to="/">Inicio</Link>
             <Link className="elementNav anchorNav" to="/Cat/Consola">Consolas</Link>
             <Link className="elementNav anchorNav" to="/Cat/Periferico">Perifericos</Link>
             <Link className="elementNav anchorNav" to="/Cat/Juego">Juegos</Link>
-            {getTotalItemInCart() > 0 && <CartWidget/>}
+            
         </nav>
 
     );

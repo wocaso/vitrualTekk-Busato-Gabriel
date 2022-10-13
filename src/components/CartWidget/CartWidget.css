@@ -3,15 +3,26 @@
 #CartWidgetContainer{
     display: flex;
     flex-direction: row;
-    transition: 00.5s;
+    transition: 00.5s ease-out;
+    margin-top: 17px;
+    margin-right: 18px;
 }
 
 #CartWidgetCount{
     font-family: 'Open Sans', sans-serif;
     font-size: 35px;
-    
+    margin-top: 18px;
+    margin-right: 5px;
+
+   
 }
 
 #CartWidgetContainer:hover{
     transform: scale(1.06);
+
+
 }
+
+
+
+

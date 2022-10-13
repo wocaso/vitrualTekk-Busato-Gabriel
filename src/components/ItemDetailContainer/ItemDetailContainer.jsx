@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import {getSingleData} from "../../Services/mockApi"
+import {getSingleData} from "../../Services/firestore"
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {useParams} from "react-router-dom"
 
@@ -8,7 +8,7 @@ function ItemDetailContainer() {
     const id = useParams().id;
 
     useEffect(()=>{
-        getSingleData(parseInt(id)).then((res) => setData(res))
+        getSingleData(id).then((res) => setData(res))
     },[id])
 
   return (
