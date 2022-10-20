@@ -1,0 +1,17 @@
+#CheckoutEndContainer{
+    border: 10px solid rgb(73, 73, 73);
+    border-radius: 12px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-top: 80px;
+    background-color: rgb(240, 240, 240);
+
+}
+
+#CheckoutEndContainerFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

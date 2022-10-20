@@ -1,0 +1,33 @@
+#FooterFlexContainer{
+    background-color: rgb(48, 48, 48);
+    position: fixed;
+   bottom: 0;
+   width: 100%;
+   height: 60px;
+   display: flex;
+   justify-content: space-between;
+
+}
+
+.FooterText{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    color: aliceblue;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+.FooterTextLeft{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    margin-top: 20px;
+    
+    padding-right: 30px;
+}

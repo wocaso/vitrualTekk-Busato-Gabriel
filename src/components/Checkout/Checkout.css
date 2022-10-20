@@ -1,0 +1,32 @@
+#inputName{
+
+}
+#checkoutContainer{
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: 500px;
+    justify-self: center;
+    margin-top: 30px;
+    margin-left: 35vw;
+    background-color: rgb(224, 224, 224);
+    border: 10px solid rgb(161, 161, 161);
+    border-radius: 12px;
+
+}
+
+.inputForm{
+    font-size: 40px;
+    margin-top: 10px;
+
+}
+
+.labelForm{
+    margin-top: 100px;
+    font-size: 30px;
+}
+
+.formItem{
+
+    margin-top: 20px;
+}

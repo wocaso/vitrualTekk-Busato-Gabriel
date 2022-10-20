@@ -38,6 +38,14 @@ export default function CartContextProvider({children}){
         })
         return total;
     }
+
+    function getTotalPriceInCart(){
+        let total = 0;
+        cart.forEach(item => 
+            total += (item.count*item.price)
+        )
+        return total;
+    }
     function plusOneItem(itemId){
         for (let i = 0; i<= cart.length; i++) {
             if(cart[i]){
@@ -85,12 +93,13 @@ export default function CartContextProvider({children}){
     }
 
 
+
     function clearCart(){
         setCart([]);
     }
 
     return (
-        <cartContext.Provider value={{cart, addItem, removeItem, isInCart, clearCart, getTotalItemInCart, plusOneItem, minusOneItem}}>{children}</cartContext.Provider> 
+        <cartContext.Provider value={{cart, addItem, removeItem, isInCart, clearCart, getTotalItemInCart, plusOneItem, minusOneItem, getTotalPriceInCart}}>{children}</cartContext.Provider> 
     );
 }
 
