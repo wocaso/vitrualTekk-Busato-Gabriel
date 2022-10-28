@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./ItemCount.css";
 
 
 
+
 function ItemCount(props) {
-    const [count, setCount] = React.useState(props.initial)
+    const [count, setCount] = useState(props.initial)
 
 
     function addCount(){
@@ -27,7 +28,7 @@ function ItemCount(props) {
             <span>{count}</span>
           {props.initial < count ?  <button onClick={reducceCount}>-</button> : <button  disabled onClick={reducceCount}>-</button> } 
       </div>
-      <button id="btnAgregar" onClick={()=> props.onAdd(count)}>Agregar al carrito</button>
+      <button id="btnAgregar" onClick={()=> props.onAdd(count)}>{props.text}</button>
     </div>
       
     </div>

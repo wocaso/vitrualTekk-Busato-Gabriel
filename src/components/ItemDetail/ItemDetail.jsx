@@ -1,25 +1,25 @@
 import React from 'react'
 import "./ItemDetail.css"
-import ItemCount from "../ItemCount/ItemCount"
+
 import { useState, useContext } from "react"
 import {cartContext} from "../../context/cartContext"
-import ButtonCounter from './ButtonCounter/ButtonCounter';
+
+import ItemCount from "../ItemCount/ItemCount"
+import ButtonLink from '../ButtonLink/ButtonLink';
 
 
-
-
+//-------------------------------------------------------------------------------------------------------//
 
 function ItemDetail({item}) {
-  let [onAddConfirm, setOnAddConfirm] = useState(0);
+  const [onAddConfirm, setOnAddConfirm] = useState(0);
   const {  addItem } = useContext(cartContext);
 
-  function addedToCart(count){
+  function addToCart(count){
       setOnAddConfirm(count)
       addItem(item, count)
   }
 
-
-
+//-------------------------------------------------------------------------------------------------------//
 
   return (
     <div id="itemDetailFlex">
@@ -30,17 +30,13 @@ function ItemDetail({item}) {
       <h1 className='itemTexto' id='itemDetailPrice'>${item.price}</h1>
       <div id='ItemCountContainer'>
 
+        {onAddConfirm === 0 ? <ItemCount initial={1} stock={item.stock} id={item.id} onAdd={addToCart} text="Agregar al carrito"/> : <ButtonLink text="Finalizar Compra" link="/Cart"/>}
         
-        {onAddConfirm === 0 ? <ItemCount initial={1} stock={item.stock} id={item.id} onAdd={addedToCart}/> : <ButtonCounter link="/Cart"/>}
-
-
         </div>      
       
     </div>
     </div>
     
-    
-
   )
 }
 

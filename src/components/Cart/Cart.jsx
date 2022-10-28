@@ -9,42 +9,23 @@ import ButtonReturnFromCart from '../ButtonReturnFromCart/ButtonReturnFromCart';
 
 
 function Cart() {
-
-
-
-
-  
   const context = useContext(cartContext);
   const {cart, getTotalPriceInCart} = context;
-  let totalPrice = 0;
-
-  
-
-  
-
-
-
   return (
     <div>
           <div id='ItemListFlex'>
         {cart.map((item)=>{
-          totalPrice=getTotalPriceInCart();
             return(
               <div  key={item.id}>
                 <ItemCart id={item.id} tittle={item.tittle} description={item.description} price={item.price} picture={item.picture} count={item.count} stock={item.stock}/>
-                
-
               </div>
-                
-
             );
         })}
 
     </div>
-    {totalPrice > 0 ? <CartPrice total={totalPrice}/> :<ButtonReturnFromCart/>}   
+    {getTotalPriceInCart() > 0 ? <CartPrice total={getTotalPriceInCart()}/> :<ButtonReturnFromCart/>}   
     
     </div>
   )
 }
-
 export default Cart

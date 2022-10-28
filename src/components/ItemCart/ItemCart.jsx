@@ -2,12 +2,12 @@ import React,{useContext} from 'react'
 import "./ItemCart.css";
 import {cartContext} from "../../context/cartContext";
 
-
+//-------------------------------------------------------------------------------------------------------//
 
 function ItemCart(props) {
   const context = useContext(cartContext);
   const {removeItem, plusOneItem, minusOneItem} = context;
-
+//-------------------------------------------------------------------------------------------------------//
   function removeFromCart(){
     removeItem(props.id)
   }
@@ -17,7 +17,7 @@ function ItemCart(props) {
   function minusOne(){
     minusOneItem(props.id)
   }
-
+//-------------------------------------------------------------------------------------------------------//
   return (
     <div key={props.id} id="flexContainer">
         <img id='itemPicture' src={props.picture} alt="" />
@@ -35,5 +35,7 @@ function ItemCart(props) {
     </div>
   )
 }
+
+//-------------------------------------------------------------------------------------------------------//
 
 export default ItemCart

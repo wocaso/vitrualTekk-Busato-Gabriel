@@ -1,13 +1,12 @@
 import {useState, createContext} from 'react'
 
-
 const cartContext = createContext();
 
-
+//-------------------------------------------------------------------------------------------------------//
 export default function CartContextProvider({children}){
     const [cart, setCart] = useState([]);
 
-
+//-------------------------------------------------------------------------------------------------------//
     function addItem(item, count ){
         if(isInCart(item.id)){
             let newCart = cart.map((itemMap) => {
@@ -31,6 +30,8 @@ export default function CartContextProvider({children}){
 
     }
 
+//-------------------------------------------------------------------------------------------------------//
+
     function getTotalItemInCart(){
         let total = 0;
         cart.forEach(item => {
@@ -39,6 +40,8 @@ export default function CartContextProvider({children}){
         return total;
     }
 
+//-------------------------------------------------------------------------------------------------------//
+
     function getTotalPriceInCart(){
         let total = 0;
         cart.forEach(item => 
@@ -46,6 +49,9 @@ export default function CartContextProvider({children}){
         )
         return total;
     }
+
+//-------------------------------------------------------------------------------------------------------//
+
     function plusOneItem(itemId){
         for (let i = 0; i<= cart.length; i++) {
             if(cart[i]){
@@ -61,6 +67,8 @@ export default function CartContextProvider({children}){
 
     }
 
+//-------------------------------------------------------------------------------------------------------//
+
     function minusOneItem(itemId){
         for (let i = 0; i<= cart.length; i++) {
             if(cart[i]){
@@ -69,13 +77,11 @@ export default function CartContextProvider({children}){
                     newCart[i].count -= 1;
                     setCart(newCart);
                 }
-
             }      
         }
-    
-
     }
 
+//-------------------------------------------------------------------------------------------------------//
 
     function removeItem(itemId){
         for (let i = 0; i<= cart.length; i++) {
@@ -85,22 +91,22 @@ export default function CartContextProvider({children}){
                     newCart.splice(i, 1);
                     setCart(newCart);
                 }
-
-            }
-            
-            
+            }    
         }
     }
 
-
+//-------------------------------------------------------------------------------------------------------//
 
     function clearCart(){
         setCart([]);
     }
+
+//-------------------------------------------------------------------------------------------------------//
 
     return (
         <cartContext.Provider value={{cart, addItem, removeItem, isInCart, clearCart, getTotalItemInCart, plusOneItem, minusOneItem, getTotalPriceInCart}}>{children}</cartContext.Provider> 
     );
 }
 
+//-------------------------------------------------------------------------------------------------------//
 export {cartContext};

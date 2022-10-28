@@ -2,10 +2,11 @@ import React from 'react'
 import "./Item.css";
 import {Link} from "react-router-dom";
 
-
+//-------------------------------------------------------------------------------------------------------//
 function Item(props) {
 const urlItem = `/Item/${props.id}`
 
+//-------------------------------------------------------------------------------------------------------//
   return (
     <div key={props.id} id="flexContainer">
       <Link to={urlItem} style={{ textDecoration: 'none' }}>
@@ -19,5 +20,5 @@ const urlItem = `/Item/${props.id}`
     </div>
   )
 }
-
+//-------------------------------------------------------------------------------------------------------//
 export default Item

@@ -1,6 +1,6 @@
 import React,{useState, useContext} from 'react'
 import { useNavigate} from "react-router-dom";
-import {sendBuyOrder, sendArrayToFirestore} from "../../Services/firestore"
+import {sendBuyOrder} from "../../Services/firestore"
 import {cartContext} from "../../context/cartContext"
 import "./Checkout.css"
 

@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import "./ItemListContainer.css";
-import ItemList from '../ItemList/ItemList';
+
 import {getData, getCatData} from "../../Services/firestore";
 import {useParams} from "react-router-dom";
 
+import ItemList from '../ItemList/ItemList';
 
+//-------------------------------------------------------------------------------------------------------//
 
 function ItemListContainer() {
-      let [data, setData] = useState([]);
+      const [data, setData] = useState([]);
       const {cat}=useParams();
 
     
@@ -23,6 +25,9 @@ function ItemListContainer() {
       }
         
     },[cat])
+
+
+//-------------------------------------------------------------------------------------------------------//
   return (
     <div>
         <ItemList items={data}/>
@@ -30,5 +35,8 @@ function ItemListContainer() {
     </div>
   )
 }
+
+
+//-------------------------------------------------------------------------------------------------------//
 
 export default ItemListContainer
