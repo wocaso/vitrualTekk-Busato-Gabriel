@@ -1,21 +1,22 @@
 import React from 'react'
 import "./ButtonReturnFromCart.css"
-import {Link} from "react-router-dom";
-
+import ButtonLink from "../ButtonLink/ButtonLink"
+//-------------------------------------------------------------------------------------------------------//
 function ButtonReturnFromCart() {
   return (
-  <div>
-    
+    <div id="ButtonReturnFromCartFlexContainerFlex">
+      <div id="ButtonReturnFromCartFlexContainer">
     <h1 className='texto'  style={{marginTop: "80px" }}>
         Ups, Parece que no tienes nada en tu carrito...
     </h1>
-    <Link to="/">
-        <button>Regresar a la tienda</button>
-    </Link>
-
+    <ButtonLink link="/" text="Regresar a la tienda"/>
   </div>
+
+    </div>
+  
     
   )
 }
+//-------------------------------------------------------------------------------------------------------//
 
 export default ButtonReturnFromCart

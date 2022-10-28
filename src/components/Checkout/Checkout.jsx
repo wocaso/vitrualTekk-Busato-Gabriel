@@ -3,27 +3,26 @@ import { useNavigate} from "react-router-dom";
 import {sendBuyOrder} from "../../Services/firestore"
 import {cartContext} from "../../context/cartContext"
 import "./Checkout.css"
-
+//-------------------------------------------------------------------------------------------------------//
 function Checkout() {
   const [dataForm, setDataForm] = useState({
     name:"",
     phone:"",
     email:""
   });
-
+//-------------------------------------------------------------------------------------------------------//
   const navigate = useNavigate();
   const context = useContext(cartContext);
   const {cart, getTotalPriceInCart} = context;
-
+//-------------------------------------------------------------------------------------------------------//
   function inputChangeHander(event){
     let inputName = event.target.name;
     let inputValue = event.target.value;
-
-
     const newDataForm = {...dataForm};
     newDataForm[inputName] = inputValue;
     setDataForm(newDataForm);
   }
+//-------------------------------------------------------------------------------------------------------//
   function handleSendData(event){
     event.preventDefault();
     const buyOrder = {
@@ -38,7 +37,7 @@ function Checkout() {
     })
 
   };
-
+//-------------------------------------------------------------------------------------------------------//
 
   return (
     <div >
@@ -81,13 +80,10 @@ function Checkout() {
 
         </div>
         <button onClick={handleSendData}>Finalizar Compra</button>
-        
-
-
       </form>
-
     </div>
   )
 }
+//-------------------------------------------------------------------------------------------------------//
 
 export default Checkout

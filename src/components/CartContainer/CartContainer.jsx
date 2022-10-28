@@ -3,14 +3,12 @@ import {cartContext} from "../../context/cartContext"
 import ItemCart from '../ItemCart/ItemCart';
 import CartPrice from '../CartPrice/CartPrice';
 import ButtonReturnFromCart from '../ButtonReturnFromCart/ButtonReturnFromCart';
-
-
-
-
-
+//-------------------------------------------------------------------------------------------------------//
 function Cart() {
+//-------------------------------------------------------------------------------------------------------//
   const context = useContext(cartContext);
   const {cart, getTotalPriceInCart} = context;
+//-------------------------------------------------------------------------------------------------------//
   return (
     <div>
           <div id='ItemListFlex'>
@@ -28,4 +26,5 @@ function Cart() {
     </div>
   )
 }
+//-------------------------------------------------------------------------------------------------------//
 export default Cart

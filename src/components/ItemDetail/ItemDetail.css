@@ -23,6 +23,7 @@
 }
 #ItemCountContainer{
     grid-area: ItemCount;
+    background-color:rgb(218, 218, 218);
 }
 
 

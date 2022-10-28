@@ -2,8 +2,12 @@ import React from 'react'
 import {useParams} from "react-router-dom"
 import "./CheckoutEnd.css"
 
+//-------------------------------------------------------------------------------------------------------//
+
 function CheckoutEnd() {
+//-------------------------------------------------------------------------------------------------------//
     const id = useParams().userId;
+//-------------------------------------------------------------------------------------------------------//
   return (
     <div id='CheckoutEndContainerFlex'>
       <div id='CheckoutEndContainer'>
@@ -12,8 +16,8 @@ function CheckoutEnd() {
     </div>
 
     </div>
-    
   )
 }
+//-------------------------------------------------------------------------------------------------------//
 
 export default CheckoutEnd

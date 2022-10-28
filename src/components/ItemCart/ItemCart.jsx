@@ -1,6 +1,7 @@
 import React,{useContext} from 'react'
-import "./ItemCart.css";
 import {cartContext} from "../../context/cartContext";
+import Item from "../Item/Item"
+
 
 //-------------------------------------------------------------------------------------------------------//
 
@@ -17,22 +18,17 @@ function ItemCart(props) {
   function minusOne(){
     minusOneItem(props.id)
   }
+
 //-------------------------------------------------------------------------------------------------------//
   return (
-    <div key={props.id} id="flexContainer">
-        <img id='itemPicture' src={props.picture} alt="" />
-        <h1 className='itemTexto' id='itemTittle'>{props.tittle}</h1>
-        <h1 className='itemTexto' id='itemDescription'>{props.description}</h1>
-        <h1 className='itemTexto' id="itemCount">Cantidad: {props.count}</h1>
-        <h1 className='itemTexto' id='itemPrice'>${props.price * props.count}</h1>
-        <div id='ItemCartButtonContainer'>
+
+      <Item id={props.id} key={props.id} tittle={props.tittle} description={props.description} price={props.price * props.count} picture={props.picture} count={props.count} addOn={
+      <div id='ItemCartButtonContainer'>
           {props.stock > props.count ? <button onClick={plusOne}>+</button> : <button onClick={plusOne} disabled>+</button>}
          <button id="removeFromCartButton" onClick={removeFromCart}>Quitar</button>
          {props.count > 1 ? <button onClick={minusOne}>-</button> : <button onClick={minusOne} disabled>-</button>  }
-
         </div>
-        
-    </div>
+      }/>
   )
 }
 

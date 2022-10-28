@@ -2,9 +2,8 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import "./ButtonLink.css"
 
-
+//-------------------------------------------------------------------------------------------------------//
 function ButtonCounter(props) {
-
   return (
     <div id="ButtonCounterContainer">
         <Link to={props.link}> 
@@ -13,5 +12,6 @@ function ButtonCounter(props) {
     </div>
   )
 }
+//-------------------------------------------------------------------------------------------------------//
 
 export default ButtonCounter
