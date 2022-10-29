@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Bienvenidos a  **Vitural Tekk**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+"Virtual tekk" fue contruido con `React`, gracias a los cursos de coderhouse y a la ayuda que tanto el profesor y los tutores brindaron a lo largo de estos meses es que fue posible llegar a este resultado.
 
-## Available Scripts
+## Pantallazo general del e-comerce
+Se trata de una pagina de venta de productos informaticos orientados al gaiming.\
+Inicie la aplicacion utilizando el comando `npm start`.
+La aplicacion tomara el lugar de http://localhost:3000. 
 
-In the project directory, you can run:
+## Componentes
 
-### `npm start`
+### **NavBar**
+ Nada complejo, se encarga de los link para navegar dentro de la pagina.\
+Condicionalmente si se tienen o no productos en el carrito muestra o no el `CartWidget`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **CartWidget**
+Se utiliza en el `navBar` de manera condicional para que el usuario pueda saber cuantos productos tiene agregados hasta el momento en su carrito.\
+Ademas el componente mismo funciona como link para ir hasta el carrito de productos agregados.
 
-### `npm test`
+### **Footer**
+Un footer que no posee otra funcion que no sea estetica e informativa.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### **ItemListContainer**
+Como todos los componentes terminados en container de la app, es quien se encarga de recibir la info y realizar las funciones nesesarias antes de enviar los datos al componentes que renderizara estos datos.\
+Aqui tambien se filtra que Items van a ser renderizados, si no hay una categoria seleccionada enviara todos, sino solo los que cumplan con el requisito.\
+En este caso los datos de los items los recibe de `Firestore.js` y son enviados a `ItemList` para que realize el mapeo de estos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **ItemList**
+Recibe los datos del `ItemListContainer` y con ellos mapea la cantidad de items nesesarios, utilizando como plantilla para estos al componente `Item`.\
+Agrega a su vez a cada `Item` un link a su respectivo Url.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Item**
+Componente para renderizar productos, recibe datos y con su plantilla ordena estos en una vista agradable para el usuario.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **ItemDetailContainer**
+Utiliza el `Url param` que proporciono `ItemList` para decidir que item va a ser renderizado, buscando los datos de este desde `firestone.js`, utilizando el componente `ItemDetail` para su renderizacion.
 
-### `npm run eject`
+### **ItemDetail**
+Renderiza el detalle del item, y con los datos recibidos, agrega la funcionalidades para que el usuario pueda agregar dicho item a su carrito.\
+El numero de items seleccionados lo decide el componente `ItemCount`.\
+El link al carrito de compras lo provee el componente `ButtonLink`.\
+Los datos del carrito se van guardando en el `cartContext`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **ItemCount**
+Se encarga de devolver un valor **count** utilizado por `ItemDetail` para saber que cantidad de un producto se desea agregar al `cartContext`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **ButtonLink**
+Simple componente compuesto por un **button** y un **Link** permitiendo modificar las propiedades de estos.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **CartContainer**
+Recibe los datos que `cartContext` fue guardando y hace un mapeo sobre el componente `ItemCart` para renderizar los mismos.\
+En caso de que `cartContext` no devuelva ningun dato, renderiza `ButtonReturnFromCart` para que el usuario pueda volver a la pagina principal y agregar productos.\
+A su vez utiliza el componente `cartPrice` para mostrarle al usuario el valor total de los productos que agrego hasta el momento. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### **ItemCart**
+Utiliza el componente `Item` para renderizar los datos proporcionados por `CartContainer`.\
+A su vez agrega funciones del componente `cartContext` para poder hacer modificaciones en el carrito del usuario. (por ejemplo quitar o agregar productos).
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **CartPrice**
+Recibe datos `CartContainer` y muestra el valor del total de los productos.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### **ButtonReturnFromCart**
+Aparece cuando no hay productos en el `cartContext` y se trata de entrar a `cartContainer`. Mostrando un mensaje y permitiendole al usuario volver a la pagina principal. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### **Checkout**
+Un form para que el usuario agregue sus datos y asi poder generarle una orden de compra y guardarla en **Google Firebase**.\
+En esta orden estara detallado: **Nombre**, **Numero de telefono**, **Email**, **Productos** y **Hora y fecha de la compra**.
 
-### Making a Progressive Web App
+### **Checkout**
+Muestra al usuario que termino su compra un saludo conjunto con su **Id de compra**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
