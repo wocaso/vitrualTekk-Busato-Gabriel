@@ -38,7 +38,7 @@ Componente para renderizar productos, recibe datos y con su plantilla ordena est
 Utiliza el `Url param` que proporciono `ItemList` para decidir que item va a ser renderizado, buscando los datos de este desde `firestone.js`, utilizando el componente `ItemDetail` para su renderizacion.
 
 ### **ItemDetail**
-Renderiza el detalle del item, y con los datos recibidos, agrega la funcionalidades para que el usuario pueda agregar dicho item a su carrito.\
+Renderiza el detalle del item y con los datos recibidos, agrega las funcionalidades para que el usuario pueda agregar dicho item a su carrito.\
 El numero de items seleccionados lo decide el componente `ItemCount`.\
 El link al carrito de compras lo provee el componente `ButtonLink`.\
 Los datos del carrito se van guardando en el `cartContext`.
@@ -56,7 +56,7 @@ A su vez utiliza el componente `cartPrice` para mostrarle al usuario el valor to
 
 ### **ItemCart**
 Utiliza el componente `Item` para renderizar los datos proporcionados por `CartContainer`.\
-A su vez agrega funciones del componente `cartContext` para poder hacer modificaciones en el carrito del usuario. (por ejemplo quitar o agregar productos).
+A su vez agrega funciones del `cartContext` para poder hacer modificaciones en el carrito del usuario. (por ejemplo quitar o agregar productos).
 
 
 ### **CartPrice**
@@ -70,10 +70,10 @@ Aparece cuando no hay productos en el `cartContext` y se trata de entrar a `cart
 
 ### **Checkout**
 Un form para que el usuario agregue sus datos y asi poder generarle una orden de compra y guardarla en **Google Firebase**.\
-En esta orden estara detallado: **Nombre**, **Numero de telefono**, **Email**, **Productos** y **Hora y fecha de la compra**.
+En esta orden estara detallado: **Nombre**, **Numero de telefono**, **Email**, **Productos** y **Hora y fecha**  de la compra.
 
 ### **Checkout**
-Muestra al usuario que termino su compra un saludo conjunto con su **Id de compra**.
+Muestra al usuario que termino su compra con un saludo conjunto con su **Id de compra**.
 
 
 
