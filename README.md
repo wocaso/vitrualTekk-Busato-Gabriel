@@ -5,8 +5,8 @@
 ## Pantallazo general del e-comerce
 Se trata de una pagina de venta de productos informaticos orientados al gaiming.\
 Inicie la aplicacion utilizando el comando `npm start`.
-La aplicacion tomara el lugar de http://localhost:3000. 
-
+La aplicacion tomara el lugar de http://localhost:3000. \
+![How to buy](https://imgflip.com/gif/6zkuch)\
 ## Componentes
 
 ### **NavBar**
