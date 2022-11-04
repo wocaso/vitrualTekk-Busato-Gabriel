@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { sendBuyOrder } from "../../Services/firestore";
 import { cartContext } from "../../context/cartContext";
+import Loader from "../Loader/Loader";
 import swal from "sweetalert";
 import "./Checkout.css";
 //-------------------------------------------------------------------------------------------------------//
@@ -15,6 +16,7 @@ function Checkout() {
   const navigate = useNavigate();
   const context = useContext(cartContext);
   const { cart, getTotalPriceInCart, clearCart } = context;
+  const [isLoading, setIsLoading] = useState(false);
   //-------------------------------------------------------------------------------------------------------//
   function inputChangeHander(event) {
     let inputName = event.target.name;
@@ -53,7 +55,7 @@ function Checkout() {
         icon: "warning",
       });
     }
-
+    setIsLoading(true);
     sendBuyOrder(buyOrder).then((res) => {
       navigate(`/checkoutEnd/${res}`);
     });
@@ -62,7 +64,8 @@ function Checkout() {
   //-------------------------------------------------------------------------------------------------------//
 
   return (
-    <div>
+  <div>
+    {isLoading ? <Loader/> : <div>
       <form onSubmit={handleSendData} id="checkoutContainer">
         <div className="formItem">
           <label htmlFor="name" className="labelForm texto">
@@ -109,7 +112,10 @@ function Checkout() {
         </div>
         <button onClick={handleSendData}>Finalizar Compra</button>
       </form>
-    </div>
+    </div>}
+    
+  </div>
+    
   );
 }
 //-------------------------------------------------------------------------------------------------------//

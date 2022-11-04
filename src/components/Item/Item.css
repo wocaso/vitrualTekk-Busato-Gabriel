@@ -21,6 +21,11 @@
     color:black;
     font-size: 40px;
 }
+
+#itemTittleSmall{
+    color:black;
+    font-size: 30px;
+}
 #itemDescription{
     font-size: 20px;
     color: rgb(59, 59, 59);

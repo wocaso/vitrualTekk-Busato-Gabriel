@@ -3,11 +3,15 @@ import "./Item.css";
 
 //-------------------------------------------------------------------------------------------------------//
 function Item(props) {
+  let sizeOfText = "itemTittle"
+  if(props.tittle[15]){
+    sizeOfText = "itemTittleSmall"
+  }
   //-------------------------------------------------------------------------------------------------------//
   return (
     <div key={props.id} id="flexContainer">
       <img id="itemPicture" src={props.picture} alt="" />
-      <h1 className="itemTexto" id={"itemTittle"}>
+      <h1 className="itemTexto" id={sizeOfText}>
         {props.tittle}
       </h1>
       <h1 className="itemTexto" id="itemDescription">

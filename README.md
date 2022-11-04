@@ -1,6 +1,6 @@
 # Bienvenidos a  **Vitural Tekk**
 
-"Virtual tekk" fue contruido con `React`, gracias a los cursos de coderhouse y a la ayuda que tanto el profesor y los tutores brindaron a lo largo de estos meses es que fue posible llegar a este resultado.
+"Virtual tekk" fue construido con `React`, gracias a los cursos de coderhouse y a la ayuda que tanto el profesor y los tutores brindaron a lo largo de estos meses es que fue posible llegar a este resultado.
 
 ## Pantallazo general del e-comerce
 Se trata de una pagina de venta de productos informaticos orientados al gaiming.\
@@ -74,6 +74,10 @@ En esta orden estara detallado: **Nombre**, **Numero de telefono**, **Email**, *
 
 ### **Checkout**
 Muestra al usuario que termino su compra con un saludo conjunto con su **Id de compra**.
+
+### **Loader**
+Se muestra al usuario durante la lectura de datos.\
+El componente que contiene la animacion fue descargado de github, no soy el autor original de la animacion de este.
 
 
 
