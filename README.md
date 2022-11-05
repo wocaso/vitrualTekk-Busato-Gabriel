@@ -5,8 +5,9 @@
 ## Pantallazo general del e-comerce
 Se trata de una pagina de venta de productos informaticos orientados al gaiming.\
 Inicie la aplicacion utilizando el comando `npm start`.
-La aplicacion tomara el lugar de http://localhost:3000. \
-![](https://imgur.com/a/oqGRHQ9.gif)\
+La aplicacion tomara el lugar de http://localhost:3000.\
+Una compra deberia verse asi.\
+![Alt text](../../../../../../C:/Users/Gaby/Documents/_React%20TPS/3er-desafio-busato-gabriel/public/Assets/Readme/how%20to%20buy.gif)
 ## Componentes
 
 ### **NavBar**
