@@ -6,7 +6,7 @@
 Se trata de una pagina de venta de productos informaticos orientados al gaiming.\
 Inicie la aplicacion utilizando el comando `npm start`.
 La aplicacion tomara el lugar de http://localhost:3000. \
-![How to buy](https://imgflip.com/gif/6zkuch)\
+![](https://imgur.com/a/oqGRHQ9.gif)\
 ## Componentes
 
 ### **NavBar**
